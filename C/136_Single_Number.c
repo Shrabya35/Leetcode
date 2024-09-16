@@ -1,16 +1,14 @@
 int singleNumber(int *nums, int numsSize)
 {
-    int i = 0;
-    while (i < numsSize - 1)
+    if (numsSize == 0)
     {
-        if (nums[i] == nums[i + 1])
-        {
-            i += 2;
-        }
-        else
-        {
-            return nums[i];
-        }
+        return 0;
     }
-    return nums[i];
+
+    int result = 0;
+    for (int i = 0; i < numsSize; i++)
+    {
+        result ^= nums[i];
+    }
+    return result;
 }
